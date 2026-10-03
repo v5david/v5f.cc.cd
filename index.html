@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Quotation | V5 Medical</title>
+<meta name="description" content="Get a fast, accurate quotation for medical consumables and pharmaceutical packaging from V5 Medical. Response within 24 hours.">
+<link rel="canonical" href="https://v5f.cc.cd/">
+<link rel="icon" type="image/x-icon" href="/images/icons/favicon.ico">
+<meta property="og:title" content="Request a Quotation | V5 Medical">
+<meta property="og:description" content="B2B quotations for surgical consumables, injection devices and pharma packaging. 24h response.">
+<meta property="og:url" content="https://v5f.cc.cd/">
+<meta property="og:type" content="website">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .form-card { background: #fff; border: 1px solid #eef2f7; }
+  .btn-primary { background: linear-gradient(135deg, #1e40af, #1e3a8a); transition: transform .15s ease, box-shadow .15s ease; }
+  .btn-primary:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(30,64,175,.35); }
+  .btn-primary:disabled { opacity: .7; cursor: not-allowed; }
+  .input-focus:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.15); }
+  .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1e40af 100%); }
+  .field-error { color: #c41e3a; }
+  .fade-in { animation: fadeIn .5s ease both; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+<!-- Header -->
+<header class="bg-white shadow-sm sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="/images/v5medlogo.png" alt="V5 Medical" class="h-9 w-auto" onerror="this.style.display='none'">
+      <span class="font-bold text-lg text-gray-900">V5 Medical</span>
+    </a>
+    <a href="https://wa.me/8615133008348?text=Hi%20V5%20Medical%2C%20I%20need%20a%20quotation." target="_blank" rel="noopener"
+       class="inline-flex items-center gap-2 text-sm font-semibold text-green-700 hover:text-green-800">
+      <i class="fab fa-whatsapp text-xl"></i><span class="hidden sm:inline">WhatsApp us</span>
+    </a>
+  </div>
+</header>
+
+<!-- Hero + Form -->
+<main class="hero-bg">
+  <div class="max-w-6xl mx-auto px-4 py-10 md:py-16 grid md:grid-cols-2 gap-10 items-start">
+    <div class="text-white pt-2 md:pt-10 fade-in">
+      <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-4">Get Your B2B Quotation in 24 Hours</h1>
+      <p class="text-blue-100 text-base md:text-lg mb-6">Surgical consumables, injection devices &amp; pharmaceutical packaging — factory-direct pricing for distributors worldwide.</p>
+      <ul class="space-y-3 text-sm md:text-base text-blue-50">
+        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-400 mt-1"></i> CE / ISO 13485 certified manufacturing</li>
+        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-400 mt-1"></i> 107 SKUs across 9 categories, OEM/ODM available</li>
+        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-400 mt-1"></i> Dedicated account manager, English/Arabic support</li>
+      </ul>
+      <div class="mt-8 flex items-center gap-4 text-blue-100 text-sm">
+        <span><i class="fas fa-shield-alt mr-1"></i> Secure &amp; confidential</span>
+        <span><i class="fas fa-bolt mr-1"></i> 24h response</span>
+      </div>
+    </div>
+
+    <div class="form-card rounded-2xl shadow-2xl p-6 md:p-8 fade-in" id="formContainer">
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">Request a Quotation</h2>
+      <p class="text-gray-500 text-sm mb-6">Fill in the form below. Our team will respond within 24 hours.</p>
+      <form id="quoteForm" novalidate>
+        <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+        <div class="mb-4">
+          <label for="company" class="block text-sm font-semibold text-gray-700 mb-1.5">Company Name <span class="text-red-600">*</span></label>
+          <input type="text" id="company" name="company" required placeholder="e.g. MedSupply Co., Ltd."
+            class="input-focus w-full px-4 py-3 border border-gray-200 rounded-xl text-sm transition">
+        </div>
+
+        <div class="mb-4">
+          <label for="contact" class="block text-sm font-semibold text-gray-700 mb-1.5">Contact Person <span class="text-red-600">*</span></label>
+          <input type="text" id="contact" name="contact" required placeholder="Full name"
+            class="input-focus w-full px-4 py-3 border border-gray-200 rounded-xl text-sm transition">
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="email" class="block text-sm font-semibold text-gray-700 mb-1.5">Email <span class="text-red-600">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="you@company.com"
+              class="input-focus w-full px-4 py-3 border border-gray-200 rounded-xl text-sm transition">
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-1.5">Phone / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900"
+              class="input-focus w-full px-4 py-3 border border-gray-200 rounded-xl text-sm transition">
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="category" class="block text-sm font-semibold text-gray-700 mb-1.5">Product Category <span class="text-red-600">*</span></label>
+          <select id="category" name="category" required
+            class="input-focus w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-white transition">
+            <option value="">-- Select a category --</option>
+            <optgroup label="Surgical">
+              <option value="Surgical Sutures">Surgical Sutures</option>
+              <option value="Surgical Instruments">Surgical Instruments</option>
+              <option value="Sterile Packs">Sterile Packs</option>
+            </optgroup>
+            <optgroup label="Injection & Infusion">
+              <option value="Syringes">Syringes</option>
+              <option value="IV Cannula">IV Cannula</option>
+              <option value="Blood Collection Tubes">Blood Collection Tubes</option>
+              <option value="GLP-1 Pen Needles">GLP-1 Pen Needles</option>
+            </optgroup>
+            <optgroup label="Pharmaceutical Packaging">
+              <option value="Pharmaceutical Packaging">Pharmaceutical Packaging</option>
+              <option value="Vials & Cartridges">Vials &amp; Cartridges</option>
+            </optgroup>
+            <option value="Other / Multiple">Other / Multiple Categories</option>
+          </select>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="target_market" class="block text-sm font-semibold text-gray-700 mb-1.5">Target Market</label>
+            <input type="text" id="target_market" name="target_market" placeholder="e.g. Saudi Arabia, UAE"
+              class="input-focus w-full px-4 py-3 border border-gray-200 rounded-xl text-sm transition">
+          </div>
+          <div>
+            <label for="annual_volume" class="block text-sm font-semibold text-gray-700 mb-1.5">Est. Annual Volume</label>
+            <input type="text" id="annual_volume" name="annual_volume" placeholder="e.g. 500K pcs / year"
+              class="input-focus w-full px-4 py-3 border border-gray-200 rounded-xl text-sm transition">
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label for="description" class="block text-sm font-semibold text-gray-700 mb-1.5">Requirement Details</label>
+          <textarea id="description" name="description" rows="4"
+            placeholder="Product specs, quantity, destination country, target price, etc."
+            class="input-focus w-full px-4 py-3 border border-gray-200 rounded-xl text-sm transition resize-none"></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn"
+          class="btn-primary w-full text-white py-3.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2">
+          <i class="fas fa-paper-plane"></i><span>Submit Inquiry</span>
+        </button>
+
+        <p id="quote-form-status" class="mt-3 text-sm" role="status" aria-live="polite"></p>
+        <p id="quote-reference" class="mt-1 text-sm font-semibold text-green-700"></p>
+
+        <p class="text-center text-xs text-gray-400 mt-3">Your information is secure and will only be used for quotation purposes.</p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<!-- Trust bar -->
+<section class="bg-white border-t">
+  <div class="max-w-6xl mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div><div class="text-2xl font-extrabold text-blue-900">107+</div><div class="text-xs text-gray-500 mt-1">SKUs in catalog</div></div>
+    <div><div class="text-2xl font-extrabold text-blue-900">9</div><div class="text-xs text-gray-500 mt-1">Product categories</div></div>
+    <div><div class="text-2xl font-extrabold text-blue-900">24h</div><div class="text-xs text-gray-500 mt-1">Quotation response</div></div>
+    <div><div class="text-2xl font-extrabold text-blue-900">CE / ISO</div><div class="text-xs text-gray-500 mt-1">Certified quality</div></div>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-gray-400 text-sm">
+  <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div>© 2026 V5 Medical (Suzhou V5 Medical Technology Co., Ltd.). All rights reserved.</div>
+    <div class="flex items-center gap-4">
+      <a href="https://wa.me/8615133008348" target="_blank" rel="noopener" class="hover:text-white"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="mailto:sales@v5med.net" class="hover:text-white"><i class="fas fa-envelope"></i> sales@v5med.net</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/config.js"></script>
+<script src="/js/security-utils.js"></script>
+<script src="/js/lead-forms.js"></script>
+<script>
+  // After successful submission, show reference number inline (lead-forms.js renders status).
+  document.getElementById('quoteForm').addEventListener('v5:quote-success', function (e) {
+    var ref = e.detail && e.detail.ref;
+    if (ref) document.getElementById('quote-reference').textContent = 'Reference ID: ' + ref + ' — please keep it for follow-up.';
+  });
+</script>
+</body>
+</html>
