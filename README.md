@@ -34,9 +34,9 @@ GitHub (v5david/v5f.cc.cd)
 
 - `ALLOWED_ORIGINS` = `https://v5f.cc.cd`
 - `ERP_URL` / `ERP_API_KEY` / `ERP_API_SECRET`（复用主站低权限 ERP 用户）
-- `SALES_EMAIL` = **NO（Leo）的邮箱**（CEO 拍板：直接发 NO）
+- `SALES_EMAIL` = `sales@v5med.net`，`CC_EMAIL` = NO（Leo）的邮箱（CEO 拍板 2026-10-03：主送销售，抄送 NO）
 - `EMAIL_FROM` / `SEND_EMAIL`（Email binding）、R2 绑定（复用主站私有桶）
-- ERP 侧需配 Assignment Rule：v5f 来源 Lead 自动指派 NO（ERPNext 后台配置，非代码）
+- ERP 侧：Lead **手动认领**（CEO 拍板 2026-10-03：不做自动指派规则，NO 在 ERP 里认领）
 
 ## 待 CEO/运维
 

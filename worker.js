@@ -14,6 +14,7 @@
  *   ATTACHMENT_SIGNING_KEY                      secret; enables signed download links
  *   R2_PUBLIC_BASE                              legacy public bucket domain; leave unset once links are signed
  *   SEND_EMAIL, EMAIL_FROM, SALES_EMAIL         Email binding
+ *   CC_EMAIL                                      optional: CC new-inquiry mails (e.g. NO)
  *   LEAD_RATE_LIMITER                           optional Workers Rate Limiting binding
  *   TURNSTILE_SECRET                            optional secret; when set, a Turnstile token is required
  *   ALLOWED_ORIGINS                             optional comma-separated list
@@ -308,9 +309,11 @@ async function notifySales(env, payload, { erpLeadName, erpError }) {
     `Received: ${payload.receivedAt}`,
   ].filter((line) => line !== null);
 
+  const ccEmail = (env.CC_EMAIL || "").trim();
   const rawMessage = [
     `From: V5 Medical Website <${env.EMAIL_FROM}>`,
     `To: ${env.SALES_EMAIL}`,
+    ...(ccEmail ? [`Cc: ${ccEmail}`] : []),
     `Reply-To: ${singleLine(payload.email)}`,
     `Subject: ${encodeHeader(`${erpError ? "[ERP FAILED] " : ""}New website inquiry ${payload.ref} — ${payload.company}`)}`,
     `Message-ID: <${payload.ref}.${crypto.randomUUID()}@${env.EMAIL_FROM.split("@")[1]}>`,
@@ -323,6 +326,7 @@ async function notifySales(env, payload, { erpLeadName, erpError }) {
   ].join("\r\n");
 
   await env.SEND_EMAIL.send(new EmailMessage(env.EMAIL_FROM, env.SALES_EMAIL, rawMessage));
+  if (ccEmail) await env.SEND_EMAIL.send(new EmailMessage(env.EMAIL_FROM, ccEmail, rawMessage));
 }
 
 // ---------------------------------------------------------------- attachments
